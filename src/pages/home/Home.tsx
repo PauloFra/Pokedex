@@ -55,8 +55,11 @@ useEffect(()=>{
         <DivGrid >
         {pokemons.map((pokemon:any , indice:any ) => (
           <DivDoPokemon key={indice} onClick={() => navigate(`detail/${pokemon.url.split('/')[6]}`)} >
-              <PdivDoPokemon>{firstLetterUpper(pokemon.name)} <SpanDefault>#{pokemon.url.split('/')[6] <= 99 ? '0' + pokemon.url.split('/')[6] : pokemon.url.split('/')[6] }</SpanDefault> </PdivDoPokemon>
-              <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split('/')[6]}.png`} alt="" />
+            <SpanDefault>#{pokemon.url.split('/')[6] <= 99 ? '0' + pokemon.url.split('/')[6] : pokemon.url.split('/')[6] }</SpanDefault>
+            {/* <img width='160px' src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split('/')[6]}.png`} alt="" /> */}
+            <img width='160px' src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.url.split('/')[6]}.png`} alt="" />
+              {/* /3.png */}
+              <PdivDoPokemon>{firstLetterUpper(pokemon.name)}</PdivDoPokemon>
           </DivDoPokemon>
         ))}
       </DivGrid>

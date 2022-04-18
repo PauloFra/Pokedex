@@ -5,7 +5,8 @@ export const DetailsContainer = styled.div`
   display: flex;
   justify-content: center;
   background-color: #F7F7F7;
-  min-height: 750px;
+  padding: 124px 0;
+
 `;
 
 export const ColorTypes = styled.div<{

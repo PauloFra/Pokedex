@@ -4,9 +4,12 @@ export const DivMaior = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 10px 300px;
+  /* justify-content: center; */
+  width: 800px;
+  min-height:1400px;
+  padding: 10px;
   background-color: #F7F7F7;
+  box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.56);
 `
 export const DivHeader = styled.div`
   text-align: center;
@@ -45,38 +48,39 @@ export const SelectDefault = styled.select`
 export const Option = styled.option`
   padding: 6px 10px;
 `
-export const SpanDefault = styled.span`
-  font-size: 10px;
+export const SpanDefault = styled.h3`
+  text-align: right;
+  margin-right: 20px;
+  font-size: 13px;
   
+`
+export const PdivDoPokemon = styled.h3`
+ padding: 10px 0;
+ margin: 0;
+ background-color: #E0E0E0;
+ 
 `
 
 export const DivDoPokemon = styled.div<{
   corFundo?: any
 }>`
+
 background-color: #F7F7F7;
- border: 1px solid #E0E0E0;
+ border: 3px solid #E0E0E0;
  border-radius: 10px;
- width: 260px;
- max-height: 150px;
+ width: 200px;
+ max-height: 255px;
  transition: 1s;
   font-weight:bold;
   margin: 15px 25px;
   font-size:20px;
-  -webkit-box-shadow: inset 0px 0px 13px -1px rgba(0,0,0,0.75);
-  -moz-box-shadow: inset 0px 0px 13px -1px rgba(0,0,0,0.75);
-  box-shadow: inset 0px 0px 13px -1px rgba(0,0,0,0.75);
+
   
   :hover{
-    background-color: #fff9a0;
     transition: 1s;
     transform: scale(1.1);
     -webkit-box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.56);
     -moz-box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.56);
     box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.56);
 }
-`
-
-
-export const PdivDoPokemon = styled.p`
-  margin-bottom: 5px;
 `

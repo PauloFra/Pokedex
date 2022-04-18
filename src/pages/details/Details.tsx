@@ -25,6 +25,7 @@ import { BiArrowBack } from "react-icons/bi"
 
 function Details({pokemon, text, token, dispatch}: any) {
 const {idPokemon}: any = useParams();
+
 const {id, abilities, name, weight, height, types, stats} = pokemon;
   useEffect(() => {
     if(pokemon) {
@@ -35,7 +36,7 @@ const {id, abilities, name, weight, height, types, stats} = pokemon;
   if (token) {
     return (<Loading />)
   }
-
+  console.log(pokemon)
   return (
     <DetailsContainer>
       <ColorTypes color={types[0].type.name} width="500px" bradius="12px" margin="10px">
