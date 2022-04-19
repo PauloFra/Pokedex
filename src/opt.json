@@ -1,43 +1,43 @@
 {
-    "genracoes":[
+    "geracoes":[
         {
-            "value":"gen-1",
+            "value":"pokemon?offset=0&limit=151",
             "label":"1ª Geração"
         },
         {
-            "value":"gen-2",
+            "value":"pokemon?offset=151&limit=251",
             "label":"2ª Geração"
         },
         {
-            "value":"gen-3",
+            "value":"pokemon?offset=251&limit=386",
             "label":"3ª Geração"
         },
         {
-            "value":"gen-4",
+            "value":"pokemon?offset=386&limit=493",
             "label":"4ª Geração"
         },
         {
-            "value":"gen-5",
+            "value":"pokemon?offset=493&limit=649",
             "label":"5ª Geração"
         },
         {
-            "value":"gen-6",
+            "value":"pokemon?offset=649&limit=721",
             "label":"6ª Geração"
         },
         {
-            "value":"gen-7",
+            "value":"pokemon?offset=721&limit=809",
             "label":"7ª Geração"
         },
         {
-            "value":"gen-8",
+            "value":"pokemon?offset=809&limit=905",
             "label":"8ª Geração"
         },
         {
-            "value":"gen-9",
+            "value":"pokemon?offset=905&limit=1024",
             "label":"9ª Geração"
         },
         {
-            "value":"all",
+            "value":"pokemon?offset=0&limit=1024",
             "label":"Todas gerações"
         }
     ]

@@ -22,15 +22,12 @@ import Select from "../../components/select/Select"
 function Home({pokemons , dispatch}:any) {
 const navigate = useNavigate()  
 const [nomeInput ,setNomeInput] = useState('')
-const [generation ,setGeneration] = useState('gen-1')
+const [generation ,setGeneration] = useState('pokemon?offset=0&limit=151')
 
 useEffect(()=>{
   getInPokemons(dispatch , generation) 
 },[generation])
-  // if(pokemons.length === 0){
-  //   return(<Loading />)
-  // }
-
+  console.log(generation)
   return (
     <DivMaior>
       <DivHeader>
@@ -38,7 +35,7 @@ useEffect(()=>{
         <InputDefault type="text" placeholder='Procurar'onChange={(e)=>{setNomeInput(e.target.value)}} onKeyUp={()=>{getSearchByInput(dispatch ,pokemons , nomeInput ,generation )} }/>
         
         <div>
-          <Select onChange={(e:any) => setGeneration(e.target.value)}/>
+          <Select onChange={(element:any) => setGeneration(element.value)}/>
         </div>
        
       </DivHeader>

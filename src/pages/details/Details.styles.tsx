@@ -9,78 +9,29 @@ export const DetailsContainer = styled.div`
 
 `;
 
-export const ColorTypes = styled.div<{
-  width?: string,
-  padding?: string,
-  bradius?: string,
-  margin?: string,
-  talign?: string,
+export const DivPoke = styled.div<{
+  color?: string
 }>`
   position: relative;
-  width: ${props => props.width};
-  margin: ${props => props.margin};
-  padding: ${props => props.padding};
-  border-radius: ${props => props.bradius};
-  text-align: ${props => props.talign};
-  background-color: ${(props: any) => {
-    switch(props.color) {
-      case 'bug':
-        return '#91C12F';
+  width: 500px;
+  margin: 10px;
+  border-radius: 12px;
+  background-color: ${props => props.color};
+`;
 
-      case 'dark':
-        return '#5A5465';
+export const DivHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 0px 40px;
+  margin-bottom: 160px;
+`;
 
-      case 'dragon':
-        return '#0B6DC3';
-
-      case 'electric':
-        return '#F4D23C';
-
-      case 'fairy':
-        return '#EC8FE6';
-
-      case 'fighting':
-        return '#CE416B';
-
-      case 'fire':
-        return '#FF9D55';
-
-      case 'flying':
-        return '#89AAE3';
-
-      case 'ghost':
-        return '#5269AD';
-
-      case 'grass':
-        return '#63BC5A';
-
-      case 'ground':
-        return '#D97845';
-
-      case 'ice':
-        return '#73CEC0';
-
-      case 'normal':
-        return '#919AA2';
-
-      case 'poison':
-        return '#B567CE';
-
-      case 'psychic':
-        return '#FA7179';
-
-      case 'rock':
-        return '#C5B78C';
-
-      case 'steel':
-        return '#5A8EA2';
-
-      case 'water':
-        return '#6493EB';
-        
-        
-    }
-  }};
+export const TitleHeader = styled.h3`
+  display: flex;
+  align-items: center;
+  font-size: 22px;
 `;
 
 export const AboutContainer = styled.div`
@@ -92,252 +43,136 @@ export const AboutContainer = styled.div`
   padding: 50px 20px 10px 20px;
 `;
 
-export const DivFlex = styled.div<{
-  display?: string,
-  flexdir?: string,
-  juscont?: string,
-  alitems?: string,
-  gap?: string,
-  color?: string,
-  padding?: string,
-  bordleft?: string,
-  margin?: string,
-  txtalign?: string,
-  height?: string,
-}>`
-  
-  display: ${props => props.display};
-  flex-direction: ${props => props.flexdir};
-  justify-content: ${props => props.juscont};
-  align-items: ${props => props.alitems};
-  gap: ${props => props.gap};
-  color: ${props => props.color};
-  padding: ${props => props.padding};
-  border-left: ${props => props.bordleft};
-  margin: ${props => props.margin};
-  text-align: ${props => props.txtalign};
-  height: ${props => props.height};
+export const ContainerDivAbout = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
-export const SpanDesc = styled.span<{
+
+export const DivTypes = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+`;
+
+export const DescTypes = styled.p<{
   color?: string,
-  size?: string,
-  margin?: string,
+}>`
+  background-color: ${props => props.color};
+  color: white;
+  font-size: 12px;
+  width: 50px;
+  border-radius: 30px;
+  padding: 4px 8px;
+  text-align: center;
+`;
+
+export const DivAbout = styled.div<{
+  border?: string,
+}>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 26px;
+  border-left: ${props => props.border};
+`;
+
+export const TitleAbout = styled.h3<{
+  color?: string,
 }>`
   color: ${props => props.color};
-  font-size: ${props => props.size};
-  margin: ${props => props.margin};
+  margin: 12px;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+`;
+
+export const DescAbout = styled.p`
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    margin-top: 18px;
+    gap: 6px;
+`;
+
+export const SpanAbout = styled.span`
+  font-size: 10px;
+  margin-top: 10px;
+  color: #666666;
+`;
+
+export const InfoAbout = styled.span`
+  font-size: 14px;
+  color: gray;
+`;
+
+export const AboutText = styled.p`
+  font-size: 12px;
+  margin: 20px 40px 2px 40px;
+`;
+
+export const AbilitiesDesc = styled.p`
+  margin: 0;
+  font-size: 12px;
+`;
+
+export const ContainerStats = styled.div`
+  display: flex;
+  height: 135px;
+`;
+
+export const DivStats = styled.div`
+  margin-right: 12px;
+  text-align: end;
+`;
+
+export const DivStatsInfo = styled.div`
+  padding: 4px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+`;
+
+export const DescStats = styled.p<{
+  color?: string,
+}>`
+  color: ${props => props.color};
+  font-size: 12px;
+  margin: 6px 0;
   font-weight: bold;
 `;
 
-export const ParagrafDesc = styled.p<{
-  display?: string,
-  flexdirect?: string,
-  alitems?: string,
-  justcontent?: string,
-  size?: string,
-  margin?: string,
-}>`
-  color: ${(props: any) => {
-    switch(props.color) {
-      case 'bug':
-        return '#91C12F';
-
-      case 'dark':
-        return '#5A5465';
-
-      case 'dragon':
-        return '#0B6DC3';
-
-      case 'electric':
-        return '#F4D23C';
-
-      case 'fairy':
-        return '#EC8FE6';
-
-      case 'fighting':
-        return '#CE416B';
-
-      case 'fire':
-        return '#FF9D55';
-
-      case 'flying':
-        return '#89AAE3';
-
-      case 'ghost':
-        return '#5269AD';
-
-      case 'grass':
-        return '#63BC5A';
-
-      case 'ground':
-        return '#D97845';
-
-      case 'ice':
-        return '#73CEC0';
-
-      case 'normal':
-        return '#919AA2';
-
-      case 'poison':
-        return '#B567CE';
-
-      case 'psychic':
-        return '#FA7179';
-
-      case 'rock':
-        return '#C5B78C';
-
-      case 'steel':
-        return '#5A8EA2';
-
-      case 'water':
-        return '#6493EB';
-      }
-  }};
-  display: ${props => props.display};
-  flex-direction: ${props => props.flexdirect};
-  align-items: ${props => props.alitems};
-  justify-content: ${props => props.justcontent};
-  font-size: ${props => props.size};
-  font-weight: bold;
-  margin: ${props => props.margin}
+export const InfoStats = styled.p`
+  margin: 0;
+  font-size: 12px;
 `;
-
 
 export const UlSkill = styled.ul`
   padding-left: 10px;
   margin-top: 12px;
 `;
 
-export const LiSkill = styled.li`
+export const LiSkill = styled.li<{
+  color?: string,
+}>`
   margin-bottom: 15px;
   height: 6px;
   width: 340px;
   list-style: none;
   border-radius: 10px;
   -webkit-box-shadow: inset 0px 0px 300px -126px #a7a7a7;
--moz-box-shadow: inset 0px 0px 300px -126px #acacac;
-box-shadow: inset 0px 0px 300px -126px ${(props: any) => {
-    switch(props.color) {
-      case 'bug':
-        return '#91C12F';
-
-      case 'dark':
-        return '#5A5465';
-
-      case 'dragon':
-        return '#0B6DC3';
-
-      case 'electric':
-        return '#F4D23C';
-
-      case 'fairy':
-        return '#EC8FE6';
-
-      case 'fighting':
-        return '#CE416B';
-
-      case 'fire':
-        return '#FF9D55';
-
-      case 'flying':
-        return '#89AAE3';
-
-      case 'ghost':
-        return '#5269AD';
-
-      case 'grass':
-        return '#63BC5A';
-
-      case 'ground':
-        return '#D97845';
-
-      case 'ice':
-        return '#73CEC0';
-
-      case 'normal':
-        return '#919AA2';
-
-      case 'poison':
-        return '#B567CE';
-
-      case 'psychic':
-        return '#FA7179';
-
-      case 'rock':
-        return '#C5B78C';
-
-      case 'steel':
-        return '#5A8EA2';
-
-      case 'water':
-        return '#6493EB';
-      }
-  }};
+  -moz-box-shadow: inset 0px 0px 300px -126px #acacac;
+  box-shadow: inset 0px 0px 300px -126px ${(props => props.color)};
 `;
 
 export const SkillBar = styled.span<{
   width?: string,
+  color?: string,
 }>`
     height: inherit;
-    background: ${(props: any) => {
-    switch(props.color) {
-      case 'bug':
-        return '#91C12F';
-
-      case 'dark':
-        return '#5A5465';
-
-      case 'dragon':
-        return '#0B6DC3';
-
-      case 'electric':
-        return '#F4D23C';
-
-      case 'fairy':
-        return '#EC8FE6';
-
-      case 'fighting':
-        return '#CE416B';
-
-      case 'fire':
-        return '#FF9D55';
-
-      case 'flying':
-        return '#89AAE3';
-
-      case 'ghost':
-        return '#5269AD';
-
-      case 'grass':
-        return '#63BC5A';
-
-      case 'ground':
-        return '#D97845';
-
-      case 'ice':
-        return '#73CEC0';
-
-      case 'normal':
-        return '#919AA2';
-
-      case 'poison':
-        return '#B567CE';
-
-      case 'psychic':
-        return '#FA7179';
-
-      case 'rock':
-        return '#C5B78C';
-
-      case 'steel':
-        return '#5A8EA2';
-
-      case 'water':
-        return '#6493EB';
-      }
-  }};
+    background-color: ${props => props.color} ;
     position: absolute;
     border-radius: 10px;
     width: ${props => props.width};
@@ -348,19 +183,20 @@ export const SkillBar = styled.span<{
     }
 `;
 
-export const ImgPoke = styled.img<{
-  top?: string,
-  left?: string,
-  right?: string,
-  width?: string,
-  zindex?: string,
-}>`
-    position: absolute;
-    top: ${props => props.top};
-    left: ${props => props.left};
-    right: ${props => props.right};
-    width: ${props => props.width};
-    z-index: ${props => props.zindex};
+export const ImgPoke = styled.img`
+  position: absolute;
+  top: 60px;
+  left: 150px;
+  width: 220px;
+  z-index: 100;
+`;
+
+export const ImgPokeBall = styled.img`
+  position: absolute;
+  z-index: 1;
+  width: 210px;
+  right: 10px;
+  top: 14px;
 `;
 
 export const ReturnHome = styled.a`
