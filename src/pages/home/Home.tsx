@@ -17,9 +17,8 @@ DivGrid,
 SelectDefault,
 InputDefault,
 DivHeader,
-
 } from "./Home.styles"
-
+import Select from "../../components/select/Select"
 function Home({pokemons , dispatch}:any) {
 const navigate = useNavigate()  
 const [nomeInput ,setNomeInput] = useState('')
@@ -37,20 +36,11 @@ useEffect(()=>{
       <DivHeader>
         <H1><span><img src={pokeBall} alt="pokeball" /></span> Pokedex</H1>
         <InputDefault type="text" placeholder='Procurar'onChange={(e)=>{setNomeInput(e.target.value)}} onKeyUp={()=>{getSearchByInput(dispatch ,pokemons , nomeInput ,generation )} }/>
-        <SelectDefault onChange={(e) => setGeneration(e.target.value)}>
-             <Option value="gen-1">1ª Geração</Option>
-             <Option value="gen-2">2ª Geração</Option>
-             <Option value="gen-3">3ª Geração</Option>
-             <Option value="gen-4">4ª Geração</Option>
-             <Option value="gen-5">5ª Geração</Option>
-             <Option value="gen-6">6ª Geração</Option>
-             <Option value="gen-7">7ª Geração</Option>
-             <Option value="gen-8">8ª Geração</Option>
-             <Option value="gen-9">9ª Geração</Option>
-             <Option value="all">Todas as Gerações</Option>
-
-        </SelectDefault>
-           
+        
+        <div>
+          <Select onChange={(e:any) => setGeneration(e.target.value)}/>
+        </div>
+       
       </DivHeader>
         <DivGrid >
         {pokemons.map((pokemon:any , indice:any ) => (

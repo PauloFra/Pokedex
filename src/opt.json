@@ -1,0 +1,44 @@
+{
+    "genracoes":[
+        {
+            "value":"gen-1",
+            "label":"1ª Geração"
+        },
+        {
+            "value":"gen-2",
+            "label":"2ª Geração"
+        },
+        {
+            "value":"gen-3",
+            "label":"3ª Geração"
+        },
+        {
+            "value":"gen-4",
+            "label":"4ª Geração"
+        },
+        {
+            "value":"gen-5",
+            "label":"5ª Geração"
+        },
+        {
+            "value":"gen-6",
+            "label":"6ª Geração"
+        },
+        {
+            "value":"gen-7",
+            "label":"7ª Geração"
+        },
+        {
+            "value":"gen-8",
+            "label":"8ª Geração"
+        },
+        {
+            "value":"gen-9",
+            "label":"9ª Geração"
+        },
+        {
+            "value":"all",
+            "label":"Todas gerações"
+        }
+    ]
+}
