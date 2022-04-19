@@ -1,6 +1,6 @@
 enum Colors {
   bug = '#91C12F' as any,
-  dark = '##5A5465' as any,
+  dark = '#5A5465' as any,
   dragon = '#0B6DC3' as any,
   electric = '#F4D23C' as any,
   fairy = '#EC8FE6' as any,
