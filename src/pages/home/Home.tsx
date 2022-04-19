@@ -38,7 +38,7 @@ useEffect(()=>{
         <InputDefault type="text" placeholder='Procurar'onChange={(e)=>{setNomeInput(e.target.value)}} onKeyUp={()=>{getSearchByInput(dispatch ,pokemons , nomeInput ,generation )} }/>
         
         <div>
-          <Select onChange={(e:any) => setGeneration(e.target.value)}/>
+          <Select event={(e:any) => setGeneration(e.target.value)}/>
         </div>
        
       </DivHeader>
