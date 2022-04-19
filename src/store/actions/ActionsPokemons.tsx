@@ -1,5 +1,8 @@
 import apiPokedex from "../../apiPokedex"
+import Notiflix from "notiflix";
+import { switchGen } from "../../Utils";
 export async function getInPokemons(dispatch:any , generation:string) {
+    let genInGet = switchGen(generation)
 
     try{
         const {data} = await apiPokedex.get(`${generation}`)
