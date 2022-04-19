@@ -1,12 +1,18 @@
 import { useEffect} from "react"
 import { connect } from "react-redux"
 import { useParams } from "react-router-dom"
+
 import { firstLetterUpper, addVirgula, abreviaStats } from "../../Utils"
 import { newGetPokemon } from "../../store/actions/ActionsPokemons"
 import { FaWeight } from "react-icons/fa"
 import { GiBodyHeight } from "react-icons/gi"
 import { BiArrowBack } from "react-icons/bi"
+
 import Loading from "../../components/loading/Loading"
+import PokeBall from "../../components/images/Pokeball.png"
+import Colors from "../../enum/EnumColors"
+import Error from "../error/Error"
+
 import {
   ImgPoke,
   LiSkill,
@@ -35,10 +41,8 @@ import {
   DetailsContainer,
   ContainerDivAbout,
 } from "./Details.styles"
-import PokeBall from "../../components/images/Pokeball.png"
-import Colors from "../../enum/EnumColors"
 
-function Details({pokemon, text, token, dispatch}: any) {
+function Details({pokemon, text, error, loading, dispatch}: any) {
 const {idPokemon}: any = useParams();
 
 const {id, abilities, name, weight, height, types, stats} = pokemon;
@@ -48,13 +52,17 @@ const {id, abilities, name, weight, height, types, stats} = pokemon;
     }
   },[])
 
-  if (token) {
+  if (loading) {
     return (<Loading />)
   }
-  console.log(pokemon)
+
+  if (error) {
+    return (<Error />)
+  }
+
   return (
     <DetailsContainer>
-      <DivPoke color={Colors[types[0].type.name]}>
+      <DivPoke color={Colors[types[0]?.type.name]}>
         <DivHeader>
           <TitleHeader>
             <ReturnHome href="/"><BiArrowBack /></ReturnHome>
@@ -100,22 +108,22 @@ const {id, abilities, name, weight, height, types, stats} = pokemon;
             <AboutText>{text}</AboutText>
           </div>
           <div>
-              <TitleAbout color={Colors[types[0].type.name]}>Base Stats</TitleAbout>
+              <TitleAbout color={Colors[types[0]?.type.name]}>Base Stats</TitleAbout>
               <ContainerStats>
                 <DivStats>
-                  {stats.map((item: any, index: any) => (
-                    <DescStats color={Colors[types[0].type.name]}>{abreviaStats(item.stat.name)}</DescStats>
+                  {stats.map((item: any, index: number) => (
+                    <DescStats color={Colors[types[0]?.type.name]} key={index}>{abreviaStats(item.stat.name)}</DescStats>
                   ))}
                 </DivStats>
                 <DivStatsInfo>
-                  {stats.map((item: any, index: any) => (
+                  {stats.map((item: any, index: number) => (
                     <InfoStats key={index}>{item.base_stat}</InfoStats>
                   ))}
                 </DivStatsInfo>
                   <UlSkill>
                     {stats.map((item: string, index: number) => (
-                      <LiSkill color={Colors[types[0].type.name]} key={index}>
-                        <SkillBar color={Colors[types[0].type.name]} width={`${stats[0].base_stat}px`}></SkillBar>
+                      <LiSkill color={Colors[types[0]?.type.name]} key={index}>
+                        <SkillBar color={Colors[types[0]?.type.name]} width={`${stats[0].base_stat}px`}></SkillBar>
                       </LiSkill>
                     ))}
                   </UlSkill>
@@ -129,8 +137,9 @@ const {id, abilities, name, weight, height, types, stats} = pokemon;
 
 const mapStateToProps = (state: any) => ({
   pokemon: state.pokeReducer.pokemon,
-  token: state.pokeReducer.token,
-  text: state.pokeReducer.text
+  loading: state.pokeReducer.loading,
+  text: state.pokeReducer.text,
+  error: state.pokeReducer.error
 })
 
 export default connect(mapStateToProps)(Details)

@@ -1,18 +1,22 @@
 import apiPokedex from "../../apiPokedex"
-import Notiflix from "notiflix";
-import { switchGen } from "../../Utils";
 export async function getInPokemons(dispatch:any , generation:string) {
-    let genInGet = switchGen(generation)
 
     try{
         const {data} = await apiPokedex.get(`${generation}`)
         const setArray = {
             type:'SET_LIST',
-            listPokemon:data.results
+            listPokemon:data.results,
+            loadingHome: false
         }
         dispatch(setArray)
     }
     catch(error){
+        const setError = {
+            type: 'SET_ERROR',
+            loading: false,
+            error: true
+        }
+        dispatch(setError)
         console.log(error);   
     }
 }
@@ -28,7 +32,8 @@ export async function getSearchByInput(dispatch:any ,pokemons:any , nomeInput:st
     )
     const setArray = {
         type:'SET_LIST',
-        listPokemon:pokemonsByInput,
+        listPokemon: pokemonsByInput,
+        loadingHome: false,
         
     }
         dispatch(setArray)
@@ -37,15 +42,20 @@ export async function getSearchByInput(dispatch:any ,pokemons:any , nomeInput:st
 export async function newGetPokemon(dispatch:any , idPokemon: string) {
     try{
         const {data} = await apiPokedex.get(`/pokemon/${idPokemon}`)
-        console.log(data)
         const setArrayDetalhes = {
             type: 'SET_POKEMON',
             pokemon: data,
-            token: false
+            loading: false
         }
         dispatch(setArrayDetalhes);
     }
     catch(error){
+        const setError = {
+            type: 'SET_ERROR',
+            loading: false,
+            error: true
+        }
+        dispatch(setError)
         console.log(error);   
     }
     try{
@@ -60,21 +70,3 @@ export async function newGetPokemon(dispatch:any , idPokemon: string) {
         console.log(error)
     }
 }
-
-// async function getAllPoke(dispatch: any, id: string, pokemon: any) {
-
-//     try {
-//         const {data} = await apiPokedex.get(`/pokemon-species/${id}`)
-//         const allPoke = {
-//             type: 'SET_ALL',
-//             pokemons: data
-//         }
-//         dispatch(allPoke);
-//     } catch (error) {
-//         console.log(error)
-//     }
-// }
-
-// export function executeGetAll() {
-    
-// }
