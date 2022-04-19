@@ -123,7 +123,7 @@ const {id, abilities, name, weight, height, types, stats} = pokemon;
                   <UlSkill>
                     {stats.map((item: string, index: number) => (
                       <LiSkill color={Colors[types[0]?.type.name]} key={index}>
-                        <SkillBar color={Colors[types[0]?.type.name]} width={`${stats[0].base_stat}px`}></SkillBar>
+                        <SkillBar color={Colors[types[0]?.type.name]} width={`${stats[index].base_stat}px`}></SkillBar>
                       </LiSkill>
                     ))}
                   </UlSkill>
